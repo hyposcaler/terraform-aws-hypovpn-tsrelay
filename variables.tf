@@ -24,7 +24,7 @@ variable "availabilityZones" {
 variable "name" {
   description = "The name of the relay vpn"
   type    = string
-  default = "test"
+  default = "seed"
 }
 
 variable "public_key" {
@@ -35,4 +35,11 @@ variable "public_key" {
 variable "auth_key" {
   description = "auth key for tailscale"
   type = string 
+}
+
+
+variable "allow_aah" {
+  description = "Enabled/Disable SSH access from external CIDRs"
+  type = bool
+  default = true
 }
