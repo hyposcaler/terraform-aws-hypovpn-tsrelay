@@ -37,6 +37,11 @@ variable "auth_key" {
   type = string 
 }
 
+variable "vpn_routes" {
+  description = "routes to advertise"
+  type = string
+}
+
 
 variable "allow_aah" {
   description = "Enabled/Disable SSH access from external CIDRs"
