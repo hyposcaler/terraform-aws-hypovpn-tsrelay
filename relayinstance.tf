@@ -7,6 +7,7 @@ data "template_file" "user_data" {
   template = file("${path.module}/relay-cloudinit.yml")
   vars = {
     auth_key           = var.auth_key
+    vpn_routes         = var.vpn_routes
   }
 }
 
