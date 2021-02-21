@@ -92,7 +92,7 @@ resource "aws_security_group" "hypo_vpn_ssh_sg" {
 #   } 
 # }
 
-resource "aws_security_group" "vpn_members" {
+resource "aws_security_group" "hypo_vpn_members" {
   vpc_id       = aws_vpc.hypo_vpn_vpc.id
   name         = "VPC members for ${aws_vpc.hypo_vpn_vpc.id}"
   description  = "Security group allowing traffic from ${aws_vpc.hypo_vpn_vpc.id} "
