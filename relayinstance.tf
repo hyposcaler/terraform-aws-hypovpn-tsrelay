@@ -17,6 +17,7 @@ resource "aws_instance" "tailscale_relay_instance" {
   subnet_id = aws_subnet.hypo_vpn_subnet[0].id
   vpc_security_group_ids = [
         aws_security_group.hypo_vpn_ssh_sg.id,
+        aws_security_group.hypo_vpn_members.id
     ]
 #   iam_instance_profile = aws_iam_instance_profile.kop_instance_profile.id
   associate_public_ip_address = true
