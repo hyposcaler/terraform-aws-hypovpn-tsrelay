@@ -10,6 +10,6 @@ output "hypo_vpn_rtb_main" {
   value = aws_route_table.hypo_vpn_rtb.id
 }
 
-output "hypo_vpn_vpn_members_sg_id" {
+output "hypo_vpn_members_sg_id" {
   value = aws_security_group.vpn_members.id
 }
