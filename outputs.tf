@@ -9,3 +9,7 @@ output "hypo_vpn_subnets" {
 output "hypo_vpn_rtb_main" {
   value = aws_route_table.hypo_vpn_rtb.id
 }
+
+output "hypo_vpn_vpn_members_sg" {
+  value = aws_security_group.vpc_members
+}
