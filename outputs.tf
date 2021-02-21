@@ -11,5 +11,5 @@ output "hypo_vpn_rtb_main" {
 }
 
 output "hypo_vpn_members_sg_id" {
-  value = aws_security_group.vpn_members.id
+  value = aws_security_group.hypo_vpn_members.id
 }
