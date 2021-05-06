@@ -4,7 +4,7 @@ resource "aws_vpc" "hypo_vpn_vpc" {
   enable_dns_support   = true 
   enable_dns_hostnames = true
   tags = tomap(
-    "Name", "terraform-hypovpn-${var.name}-vpc",
+    {"Name" = "terraform-hypovpn-${var.name}-vpc",}
   )
 }
 
