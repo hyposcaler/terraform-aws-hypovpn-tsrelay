@@ -16,26 +16,21 @@ resource "aws_subnet" "hypo_vpn_subnet" {
   map_public_ip_on_launch = true
   vpc_id                  = aws_vpc.hypo_vpn_vpc.id
 
-  tags = map(
-    "Name", "terraform-hypovpn-${var.name}-subnet",
-  )
+  tags = tomap({"Name" = "terraform-hypovpn-${var.name}-subnet"})
 }
 
 
 resource "aws_internet_gateway" "hypo_vpn_igw" {
   vpc_id = aws_vpc.hypo_vpn_vpc.id
 
-  tags = map(
-    "Name", "terraform-hypovpn-${var.name}-igw",
+  tags = tomap({"Name" = "terraform-hypovpn-${var.name}-igw"}
   )
 }
 
 resource "aws_route_table" "hypo_vpn_rtb" {
   vpc_id = aws_vpc.hypo_vpn_vpc.id
 
-    tags = map(
-    "Name", "terraform-hypovpn-${var.name}-rtb",
-  )
+    tags = tomap({"Name" = "terraform-hypovpn-${var.name}-rtb"})
 
 }
 
@@ -73,9 +68,7 @@ resource "aws_security_group" "hypo_vpn_ssh_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-   tags = map(
-    "Name", "terraform-hypovpn-${var.name}-sg",
-  ) 
+   tags = tomap({"Name"="terraform-hypovpn-${var.name}-sg"}) 
 }
 
 # resource "aws_security_group" "security_group_lab" {
@@ -110,7 +103,5 @@ resource "aws_security_group" "hypo_vpn_members" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  tags = map(
-    "Name", "terraform-hypovpn-${var.name}-sg",
-  ) 
+  tags = tomap({"Name" = "terraform-hypovpn-${var.name}-sg"}) 
 }

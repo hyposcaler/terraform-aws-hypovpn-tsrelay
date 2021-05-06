@@ -24,8 +24,8 @@ resource "aws_instance" "tailscale_relay_instance" {
   key_name = "tailscale_relay_key"
   user_data = data.template_file.user_data.rendered
 
-   tags = map(
-    "Name", "terraform-hypovpn-${var.name}-tailscale_relay",
+   tags = tomap(
+    {"Name" = "terraform-hypovpn-${var.name}-tailscale_relay"}
   ) 
 }
 
