@@ -3,7 +3,7 @@ resource "aws_vpc" "hypo_vpn_vpc" {
   instance_tenancy     = "default" 
   enable_dns_support   = true 
   enable_dns_hostnames = true
-  tags = map(
+  tags = tomap(
     "Name", "terraform-hypovpn-${var.name}-vpc",
   )
 }
